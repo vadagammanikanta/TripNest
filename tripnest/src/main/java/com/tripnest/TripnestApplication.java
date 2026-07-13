@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
+import org.springframework.core.annotation.Order;
 import com.tripnest.entity.ERole;
 import com.tripnest.entity.Role;
 import com.tripnest.repository.RoleRepository;
@@ -17,6 +18,7 @@ public class TripnestApplication {
     }
 
     @Bean
+    @Order(1)
     CommandLineRunner init(RoleRepository roleRepository) {
         return args -> {
             for (ERole roleName : ERole.values()) {
