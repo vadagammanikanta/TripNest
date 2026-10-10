@@ -18,20 +18,19 @@
 [![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)](https://www.docker.com/)
 [![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat&logo=vercel&logoColor=white)](https://vercel.com/)
 [![Render](https://img.shields.io/badge/Render-46E3B7?style=flat&logo=render&logoColor=white)](https://render.com/)
-[![Groq AI](https://img.shields.io/badge/Groq_LLaMA_3.3-F55036?style=flat&logo=meta&logoColor=white)](https://groq.com/)
+[![Groq AI](https://img.shields.io/badge/Groq_AI-F55036?style=flat&logo=meta&logoColor=white)](https://groq.com/)
 
 </div>
 
 ---
 
-## 🔗 Live Demo
+## 🔗 Links
 
 | Service | Link |
 |---|---|
-| 🌐 **Live Application** | **[https://trip-nest-sand.vercel.app](https://trip-nest-sand.vercel.app)** |
+| 🌐 **Live Application** | [https://trip-nest-sand.vercel.app](https://trip-nest-sand.vercel.app) |
 | ⚙️ **REST API** | [https://tripnest-backend-4epj.onrender.com](https://tripnest-backend-4epj.onrender.com) |
-| 📦 **Personal GitHub** | [github.com/vadagammanikanta/TripNest](https://github.com/vadagammanikanta/TripNest) |
-| 🏫 **Mentor GitHub** | [Travel-Planning-Trip-Management-Platform-Group-2](https://github.com/springboardmentor8298-beep/Travel-Planning-Trip-Management-Platform-Group-2/tree/V-S-S-S-MANIKANTA) |
+| 📦 **GitHub** | [github.com/vadagammanikanta/TripNest](https://github.com/vadagammanikanta/TripNest) |
 
 > ⚠️ The backend is hosted on Render's free tier and may take ~30 seconds to wake up on the first request.
 
@@ -39,251 +38,95 @@
 
 ## 📋 Table of Contents
 
-1. [Objective](#objective)
-2. [Modules Implemented](#modules-implemented)
-3. [Week-wise Milestone Progress](#week-wise-milestone-progress)
-4. [Tech Stack](#tech-stack)
-5. [Architecture](#architecture)
-6. [Project Structure](#project-structure)
-7. [Evaluation Criteria](#evaluation-criteria)
-8. [Performance Metrics](#performance-metrics)
-9. [Running Locally](#running-locally-docker)
+1. [About](#about)
+2. [Features](#features)
+3. [Tech Stack](#tech-stack)
+4. [Architecture](#architecture)
+5. [Project Structure](#project-structure)
+6. [Getting Started](#getting-started)
+7. [Environment Variables](#environment-variables)
+8. [API Documentation](#api-documentation)
+9. [Developer](#developer)
 
 ---
 
-<a id="objective"></a>
+<a id="about"></a>
 
-## 🎯 Objective
+## 🎯 About
 
-Build a full-stack web application (React.js frontend + Spring Boot backend) that enables travelers to:
+**TripNest** is a full-stack travel planning and trip management web application built with **React.js** and **Spring Boot**. It enables travelers to plan trips, manage budgets, collaborate with friends, and get AI-powered travel guidance — all in one place.
 
-- 🗺️ **Plan trips** with day-wise itineraries and activity scheduling
-- 💰 **Manage budgets** and track expenses across categories
-- 👥 **Collaborate** with friends and family on shared trip plans
-- 📁 **Organize travel documents** (tickets, visas, hotel bookings, photos)
-- 🔔 **Stay notified** with trip reminders, budget alerts, and group invitations
-- 🌍 **Discover destinations** with curated travel guides and attraction listings
-- 🤖 **Get AI-powered travel guidance** via an integrated Tourist Guide Agent
-
-### ✅ Outcomes Achieved
-
-- ✅ Developed and deployed a full-stack React.js + Spring Boot application
-- ✅ Implemented secure user authentication using JWT and OAuth2 (Google)
-- ✅ Built trip creation and itinerary management functionality
-- ✅ Implemented budget and expense tracking systems
-- ✅ Added collaborative trip planning and group management
-- ✅ Created dashboards for trip analytics and expense reports
-- ✅ Integrated maps (Leaflet.js) and location services (Open-Meteo Weather API)
-- ✅ Deployed frontend (Vercel) and backend (Render) with TiDB cloud database
-- ✅ Added notifications for trip reminders and travel updates
-- ✅ Integrated AI Tourist Guide powered by Groq LLaMA 3.3 70B
+### What TripNest does:
+- 🗺️ Plan trips with day-wise itineraries and activity scheduling
+- 💰 Track budgets and expenses across categories
+- 👥 Collaborate with friends and family on shared trip plans
+- 📁 Organize travel documents (tickets, visas, hotel bookings)
+- 🔔 Stay notified with trip reminders and budget alerts
+- 🌍 Discover destinations with curated guides and maps
+- 🤖 Get AI-powered travel guidance via an integrated Tourist Guide chatbot
+- 🌦️ View live weather forecasts for any destination
 
 ---
 
-<a id="modules-implemented"></a>
+<a id="features"></a>
 
-## 🧩 Modules Implemented
+## 🧩 Features
 
-### 1. 🔐 User Authentication & Role-Based Access
-- ✅ JWT Authentication (Stateless, access tokens)
-- ✅ Google OAuth2 Login (Google Identity Services SDK)
-- ✅ Password Reset via email token
-- ✅ Profile Management with avatar upload
-- ✅ **Roles:** Traveler, Group Admin, Administrator
+### 🔐 Authentication & User Management
+- JWT-based stateless authentication
+- Google OAuth2 Sign-In (Google Identity Services)
+- Password reset via email token
+- Profile management with avatar upload
+- Role-based access: **Traveler**, **Group Admin**, **Administrator**
 
-### 2. 👤 User Profile Management
-- ✅ Profile creation and editing
-- ✅ Travel preferences and favorite destinations
-- ✅ Account settings and password change
-- ✅ Travel history (completed trips)
-- ✅ Profile customization
-
-### 3. 🗺️ Trip Management System
-- ✅ Create, Edit, Delete trips
-- ✅ View trip details with full timeline
-- ✅ Trip sharing via unique public token
-- ✅ Trip Information: Destination, Start/End Date, Travelers, Budget, Status
-
-### 4. 📅 Itinerary Planning System
-- ✅ Day-wise itinerary creation
-- ✅ Activity scheduling with types:
+### 🗺️ Trip Management
+- Create, edit, delete, and share trips
+- Trip sharing via unique public token (shareable link)
+- Full trip timeline and status tracking
+- Day-wise itinerary creation with activity types:
   - Sightseeing, Transportation, Accommodation, Dining, Adventure, Shopping
-- ✅ Place management and travel timeline
-- ✅ Activity reminders via notification system
 
-### 5. 💰 Budget & Expense Management
-- ✅ Budget planning per trip
-- ✅ Expense recording with category tagging
-- ✅ Category-wise expenses: Transportation, Hotel, Food, Shopping, Entertainment, Miscellaneous
-- ✅ Cost estimation and budget gauge widget
-- ✅ Expense reports with pie charts and bar graphs
-- ✅ **Group Expense Splitting** — auto-split bills among trip members
+### 💰 Budget & Expense Tracking
+- Per-trip budget planning
+- Expense recording with category tagging
+- Category-wise breakdown: Transportation, Hotel, Food, Shopping, Entertainment, Miscellaneous
+- Real-time budget gauge and overspend alerts
+- Expense reports with pie charts and bar graphs
+- **Group Expense Splitting** — auto-split bills among trip members with settlement views
 
-### 6. 👥 Group Collaboration System
-- ✅ Create travel groups / invite members by email or username
-- ✅ Shared itineraries
-- ✅ **Real-time Group Chat** per trip
-- ✅ Shared expenses with split management
-- ✅ Role management (Owner, Editor, Viewer)
+### 👥 Group Collaboration
+- Invite members by email or username
+- Role management (Owner, Editor, Viewer)
+- **Real-time Group Chat** per trip
+- Shared itineraries and expenses
 
-### 7. 🌍 Destination Discovery System
-- ✅ Browse and search destinations
-- ✅ Destination details and attraction listings
-- ✅ Travel guides via AI Tourist Agent
-- ✅ Live Weather information (Open-Meteo API)
-- ✅ Interactive map with location markers (Leaflet.js)
+### 🌍 Destination Discovery
+- Browse and search destinations
+- Destination details and attraction listings
+- **Interactive Map** with location markers (Leaflet.js + OpenStreetMap)
+- **Live Weather Widget** powered by Open-Meteo API (no key required)
 
-### 8. 📁 Media & Document Management
-- ✅ Upload travel documents (PDF, images)
-- ✅ Upload tickets, hotel bookings, visas
-- ✅ Trip PDF export (complete summary)
-- ✅ Secure cloud-compatible document storage
+### 📁 Document Management
+- Upload travel documents (PDF, images)
+- Store tickets, hotel bookings, and visas per trip
+- Trip PDF export (complete itinerary summary)
 
-### 9. 🔔 Notification System
-- ✅ Trip reminders and activity reminders
-- ✅ Budget alerts (when spending exceeds thresholds)
-- ✅ Group invitations
-- ✅ System notifications with in-app bell indicator
-- ✅ Mark all/individual notifications as read
+### 🔔 Notifications
+- Trip and activity reminders
+- Budget overspend alerts
+- Group invitation notifications
+- In-app notification bell with mark-as-read
 
-### 10. 📊 Reports & Analytics
+### 📊 Analytics & Dashboards
+- **Traveler Dashboard:** Upcoming trips, budget gauge, expense summary, travel statistics
+- **Admin Dashboard:** User analytics, trip analytics, platform activity logs
 
-#### Traveler Dashboard
-- ✅ Upcoming trips overview
-- ✅ Budget overview with gauge chart
-- ✅ Expense summary with visual breakdown
-- ✅ Travel statistics (trips completed, total spend, destinations)
-- ✅ Favorite destinations
-
-#### Admin Dashboard
-- ✅ User analytics (total users, active users)
-- ✅ Trip analytics (trips created, destinations)
-- ✅ Platform statistics and activity logs
-
-### 11. 💳 Payment Management
-- ✅ Group expense splitting
-- ✅ Shared expense tracking
-- ✅ Settlement management (who owes what to whom)
-
-### 12. 🤖 AI Tourist Guide (Bonus Feature)
-- ✅ Integrated Groq Cloud AI (LLaMA 3.3 70B Versatile model)
-- ✅ Aware of live trip details, budget, weather, and all user trips
-- ✅ Provides tourist recommendations, food guides, packing tips
-- ✅ Floating agent widget accessible on every screen
-
-### 13. ☁️ Final Integration, Testing & Deployment
-- ✅ Frontend and backend integration
-- ✅ API validation and Postman testing
-- ✅ Security testing (JWT, CORS, input validation)
-- ✅ Docker containerization (docker-compose)
-- ✅ Production deployment (Vercel + Render + TiDB)
-
----
-
-<a id="week-wise-milestone-progress"></a>
-
-## 📅 Week-wise Milestone Progress
-
-### ✅ Milestone 1 — Week 1 & 2: Requirements, Database Design & Backend Setup
-
-| Task | Status |
-|---|---|
-| Define project scope and user roles | ✅ Done |
-| Design database schema (Users, Roles, Trips, Itineraries, Activities, Destinations, Budgets, Expenses, Notifications) | ✅ Done |
-| Initialize Spring Boot project | ✅ Done |
-| Configure MySQL database | ✅ Done |
-| Implement JWT authentication | ✅ Done |
-| Create React frontend skeleton | ✅ Done |
-
-**Outcomes:**
-- ✅ Backend and frontend architecture setup completed
-- ✅ Authentication flow functional (JWT + Google OAuth2)
-- ✅ Database schema finalized with all entities
-- ✅ Role-based access configured (Traveler / Admin)
-
----
-
-### ✅ Milestone 2 — Week 3 & 4: Trip & Itinerary Management
-
-| Task | Status |
-|---|---|
-| Implement trip management APIs | ✅ Done |
-| Build itinerary creation functionality | ✅ Done |
-| Develop destination pages | ✅ Done |
-| Create trip dashboards | ✅ Done |
-| Implement activity scheduling | ✅ Done |
-
-**Outcomes:**
-- ✅ Trip management operational (Create, Edit, Delete, Share)
-- ✅ Itinerary workflow functional (day-wise, activity types)
-- ✅ Destination management completed
-
----
-
-### ✅ Milestone 3 — Week 5 & 6: Budget, Expenses & Collaboration
-
-| Task | Status |
-|---|---|
-| Implement budget management system | ✅ Done |
-| Build expense tracking functionality | ✅ Done |
-| Create group collaboration workflow | ✅ Done |
-| Implement notifications | ✅ Done |
-| Add document upload system | ✅ Done |
-
-**Outcomes:**
-- ✅ Expense management operational (category-wise, CSV/PDF export)
-- ✅ Group collaboration functional (invite, chat, shared expenses)
-- ✅ Budget tracking completed with alerts
-- ✅ Group Expense Splitting with settlement views
-
----
-
-### ✅ Milestone 4 — Week 7 & 8: Analytics, Testing & Deployment
-
-| Task | Status |
-|---|---|
-| Build analytics dashboard | ✅ Done |
-| Add reports and charts | ✅ Done |
-| Implement testing and validations | ✅ Done |
-| Deploy frontend (Vercel) + backend (Render) | ✅ Done |
-| Configure production environment with TiDB | ✅ Done |
-| Add AI Tourist Guide (Groq LLaMA 3.3) | ✅ Done (Bonus) |
-| Add Google OAuth2 Sign-In | ✅ Done (Bonus) |
-| Add Dark Mode / Light Mode | ✅ Done (Bonus) |
-| Docker containerization | ✅ Done |
-
-**Outcomes:**
-- ✅ Fully deployed production-ready application at [trip-nest-sand.vercel.app](https://trip-nest-sand.vercel.app)
-- ✅ Analytics and reporting systems operational
-- ✅ Complete end-to-end travel planning workflow demonstrable
-
----
-
-<a id="architecture"></a>
-
-## 🏗️ Architecture
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    User's Browser                           │
-│          React SPA (Vercel CDN — trip-nest-sand.vercel.app) │
-└──────────────────────┬──────────────────────────────────────┘
-                       │  /api/* requests proxied via vercel.json
-                       ▼
-┌─────────────────────────────────────────────────────────────┐
-│          Spring Boot REST API (Render Free Tier)            │
-│           tripnest-backend-4epj.onrender.com                │
-│  - Spring Security + JWT                                    │
-│  - Google OAuth2 endpoint                                   │
-│  - JPA Repositories + Hibernate (MySQL Dialect)             │
-└──────────────────────┬──────────────────────────────────────┘
-                       │ JDBC + TLS (sslMode=VERIFY_IDENTITY)
-                       ▼
-┌─────────────────────────────────────────────────────────────┐
-│           TiDB Serverless (MySQL-compatible cloud DB)       │
-│         gateway01.ap-southeast-1.prod.aws.tidbcloud.com     │
-└─────────────────────────────────────────────────────────────┘
-```
+### 🤖 AI Tourist Guide
+- Powered by **Groq Cloud AI** (GPT-class LLM)
+- Context-aware: knows your active trip details, budget, and expenses
+- Provides tourist recommendations, food guides, and packing tips
+- Live weather awareness for travel advice
+- Floating chat widget accessible on every screen
 
 ---
 
@@ -295,17 +138,55 @@ Build a full-stack web application (React.js frontend + Spring Boot backend) tha
 |---|---|
 | **Frontend** | React 18, React Router v6, Axios |
 | **Styling** | Vanilla CSS, Custom Design System, Dark/Light Mode |
-| **Maps** | Leaflet.js + OpenStreetMap |
-| **Charts** | Chart.js (Pie, Bar, Doughnut) |
-| **Backend** | Spring Boot 3.2, Spring Security, Spring Data JPA |
-| **Authentication** | JWT (JJWT), Google OAuth 2.0 |
+| **Maps** | Leaflet.js + React-Leaflet + OpenStreetMap |
+| **Charts** | Chart.js + React-ChartJS-2 (Pie, Bar, Doughnut) |
+| **Icons** | Lucide React |
+| **Backend** | Spring Boot 3.2.5, Spring Security, Spring Data JPA |
+| **Authentication** | JWT (JJWT 0.11.5), Google OAuth 2.0 |
+| **Validation** | Spring Boot Validation (Jakarta) |
+| **PDF Generation** | OpenPDF 1.3.30 |
+| **API Docs** | SpringDoc OpenAPI (Swagger UI) |
 | **Database (Local)** | MySQL 8 |
 | **Database (Cloud)** | TiDB Serverless (MySQL-compatible) |
-| **AI** | Groq Cloud API — LLaMA 3.3 70B Versatile |
-| **Weather API** | Open-Meteo (free, no key required) |
+| **AI** | Groq Cloud API (openai/gpt-oss-120b) |
+| **Weather API** | Open-Meteo + Open-Meteo Geocoding API |
 | **Containerization** | Docker, Docker Compose |
 | **Frontend Hosting** | Vercel |
 | **Backend Hosting** | Render |
+
+---
+
+<a id="architecture"></a>
+
+## 🏗️ Architecture
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    User's Browser                           │
+│        React SPA (Vercel CDN — trip-nest-sand.vercel.app)   │
+└──────────────────────┬──────────────────────────────────────┘
+                       │  /api/* proxied via vercel.json
+                       ▼
+┌─────────────────────────────────────────────────────────────┐
+│         Spring Boot REST API (Render Free Tier)             │
+│          tripnest-backend-4epj.onrender.com                 │
+│  ├── Spring Security + JWT                                  │
+│  ├── Google OAuth2 endpoint                                 │
+│  ├── Spring Data JPA + Hibernate                            │
+│  └── OpenPDF + Swagger UI                                   │
+└──────────────────────┬──────────────────────────────────────┘
+                       │ JDBC + TLS (sslMode=VERIFY_IDENTITY)
+                       ▼
+┌─────────────────────────────────────────────────────────────┐
+│          TiDB Serverless (MySQL-compatible cloud DB)        │
+│       gateway01.ap-southeast-1.prod.aws.tidbcloud.com       │
+└─────────────────────────────────────────────────────────────┘
+
+External APIs (called directly from the browser):
+  ├── Groq Cloud API       → AI Tourist Guide chatbot
+  ├── Open-Meteo API       → Live weather forecast
+  └── Open-Meteo Geocoding → City coordinates lookup
+```
 
 ---
 
@@ -320,26 +201,43 @@ TripNest/
 │   │   ├── controller/                   # REST API Controllers
 │   │   ├── service/                      # Business Logic Layer
 │   │   ├── repository/                   # Spring Data JPA Repositories
-│   │   ├── model/                        # JPA Entity Classes
+│   │   ├── entity/                       # JPA Entity Classes
+│   │   ├── dto/                          # Request / Response DTOs
 │   │   ├── security/                     # JWT + Spring Security Config
-│   │   └── dto/                          # Request/Response DTOs
+│   │   └── DataInitializer.java          # Seed data on startup
+│   ├── src/main/resources/
+│   │   └── application.properties        # App configuration
 │   └── Dockerfile
 │
 ├── tripnest-frontend/                     # React Frontend
 │   ├── src/
-│   │   ├── components/                   # Page Components
-│   │   │   ├── Dashboard.js
-│   │   │   ├── Login.js / Register.js
-│   │   │   ├── TripDetail.js
-│   │   │   ├── AnalyticsDashboard.js
-│   │   │   ├── GroupChat.js
-│   │   │   ├── AiAssistant.js
-│   │   │   ├── WeatherWidget.js
-│   │   │   ├── TripMap.js
-│   │   │   └── AdminDashboard.js
-│   │   ├── context/                      # Auth + Theme Context (React Context API)
-│   │   ├── services/                     # Axios API Service Modules
-│   │   └── index.css                     # Global Design System
+│   │   ├── components/                   # Page & Feature Components
+│   │   │   ├── Dashboard.js              # Main traveler dashboard
+│   │   │   ├── TripList.js / TripForm.js / TripDetail.js
+│   │   │   ├── ItineraryDay.js           # Day-wise itinerary
+│   │   │   ├── ExpenseForm.js / ExpenseList.js / ExpenseSplits.js
+│   │   │   ├── GroupChat.js              # Real-time group chat
+│   │   │   ├── AiAssistant.js            # AI Tourist Guide widget
+│   │   │   ├── WeatherWidget.js          # Live weather forecast
+│   │   │   ├── TripMap.js                # Interactive Leaflet map
+│   │   │   ├── DocumentManager.js        # File upload & management
+│   │   │   ├── AnalyticsDashboard.js     # Charts & reports
+│   │   │   ├── AdminDashboard.js         # Admin panel
+│   │   │   ├── Profile.js                # User profile & settings
+│   │   │   ├── Navbar.js / NotificationBell.js
+│   │   │   ├── Login.js / Register.js / ForgotPassword.js / ResetPassword.js
+│   │   │   └── PublicTripView.js         # Shareable trip page
+│   │   ├── context/
+│   │   │   ├── AuthContext.js            # Auth state (JWT + user)
+│   │   │   └── ThemeContext.js           # Dark / Light mode
+│   │   ├── services/                     # Axios API service modules
+│   │   │   ├── aiGuide.service.js        # Groq AI + Weather API
+│   │   │   ├── trip.service.js
+│   │   │   ├── expense.service.js
+│   │   │   ├── auth.service.js
+│   │   │   └── ...
+│   │   ├── App.js                        # Routes
+│   │   └── App.css                       # Global design system
 │   ├── vercel.json                       # Vercel proxy → Render backend
 │   ├── nginx.conf                        # Nginx SPA config (Docker)
 │   └── Dockerfile
@@ -352,69 +250,20 @@ TripNest/
 
 ---
 
-<a id="evaluation-criteria"></a>
+<a id="getting-started"></a>
 
-## 🎯 Evaluation Criteria
-
-### ✅ Milestone 1 (Week 2)
-- ✅ Spring Boot project setup completed
-- ✅ JWT authentication implemented
-- ✅ Database schema finalized
-- ✅ Frontend authentication flow working (Login + Register + Google OAuth)
-
-### ✅ Milestone 2 (Week 4)
-- ✅ Trip management operational (CRUD, sharing, timeline)
-- ✅ Itinerary planning functional (day-wise, activity types)
-- ✅ Destination pages implemented
-
-### ✅ Milestone 3 (Week 6)
-- ✅ Budget management operational (planning, alerts, gauge)
-- ✅ Expense tracking functional (categories, summary)
-- ✅ Collaboration workflow completed (invite, chat, split expenses)
-
-### ✅ Milestone 4 (Week 8)
-- ✅ Fully deployed frontend and backend
-- ✅ Analytics and reporting systems operational
-- ✅ End-to-end travel planning workflow demonstrated
-- ✅ Docker containerization complete
-- ✅ AI Tourist Guide (Bonus)
-- ✅ Google OAuth2 (Bonus)
-
----
-
-<a id="performance-metrics"></a>
-
-## 📊 Performance Metrics
-
-### Trip Management Metrics
-- Trip creation success rate: **100%** (validated CRUD flow)
-- Itinerary completion rate: **Day-wise activity management fully functional**
-- Destination engagement: **Maps + AI Guide + Weather integrated**
-- Group collaboration: **Invite, chat, shared expense splitting**
-
-### Budget & Expense Metrics
-- Expense tracking accuracy: **Category-wise with visual reports**
-- Budget utilization: **Real-time gauge and alerts**
-- Shared expense settlement: **Auto-split among trip members**
-
-### System Performance Metrics
-- API response time: **< 500ms on warm backend**
-- Dashboard loading: **< 2s (Vercel CDN)**
-- Notification delivery: **In-app + alert-based system**
-- Concurrent user support: **Stateless JWT — scales horizontally**
-
----
-
-<a id="running-locally-docker"></a>
-
-## 🚀 Running Locally (Docker)
+## 🚀 Getting Started
 
 ### Prerequisites
-- Docker Desktop installed
-- Java 21 (for local Spring Boot dev)
-- Node.js 18+ (for local React dev)
 
-### Steps
+- **Java 21**
+- **Node.js 18+**
+- **Docker & Docker Compose** (for containerized setup)
+- **MySQL 8** (for local dev without Docker)
+
+---
+
+### Option 1 — Run with Docker (Recommended)
 
 ```bash
 # 1. Clone the repository
@@ -430,29 +279,101 @@ cd ..
 # 3. Start all services (Backend + Frontend + MySQL)
 docker compose up -d --build
 
-# 4. Access the app
+# 4. Open the app
 # Frontend: http://localhost:8081
 # Backend:  http://localhost:8082
-```
-
-### Environment Variables (`tripnest-frontend/.env`)
-```env
-REACT_APP_GOOGLE_CLIENT_ID=your_google_client_id
-REACT_APP_GROQ_API_KEY=your_groq_api_key
+# Swagger:  http://localhost:8082/swagger-ui.html
 ```
 
 ---
+
+### Option 2 — Run Locally (Dev Mode)
+
+**Backend:**
+```bash
+cd tripnest
+# Configure application.properties with your local MySQL credentials
+./mvnw spring-boot:run
+# API runs at http://localhost:8080
+```
+
+**Frontend:**
+```bash
+cd tripnest-frontend
+npm install
+npm start
+# App runs at http://localhost:3000
+```
+
+---
+
+<a id="environment-variables"></a>
+
+## ⚙️ Environment Variables
+
+Create `tripnest-frontend/.env`:
+
+```env
+REACT_APP_GOOGLE_CLIENT_ID=your_google_oauth_client_id
+REACT_APP_GROQ_API_KEY=your_groq_api_key
+```
+
+| Variable | Description | Where to get |
+|---|---|---|
+| `REACT_APP_GOOGLE_CLIENT_ID` | Google OAuth2 Client ID | [Google Cloud Console](https://console.cloud.google.com/) |
+| `REACT_APP_GROQ_API_KEY` | Groq API key for AI Guide | [console.groq.com](https://console.groq.com/) |
+
+> The weather API (Open-Meteo) requires **no API key**.
+
+---
+
+<a id="api-documentation"></a>
+
+## 📖 API Documentation
+
+Swagger UI is available when the backend is running:
+
+- **Local:** `http://localhost:8080/swagger-ui.html`
+- **Production:** `https://tripnest-backend-4epj.onrender.com/swagger-ui.html`
+
+A full **Postman collection** is included at the root:
+```
+TripNest.postman_collection.json
+```
+
+### Key API Endpoints
+
+| Method | Endpoint | Description |
+|---|---|---|
+| `POST` | `/api/auth/signin` | Login with email & password |
+| `POST` | `/api/auth/signup` | Register new user |
+| `POST` | `/api/auth/google` | Google OAuth2 login |
+| `GET` | `/api/trips` | Get all trips for current user |
+| `POST` | `/api/trips` | Create a new trip |
+| `GET` | `/api/trips/{id}` | Get trip details |
+| `GET` | `/api/trips/{id}/itineraries` | Get day-wise itinerary |
+| `GET` | `/api/trips/{id}/expenses` | Get trip expenses |
+| `POST` | `/api/trips/{id}/members` | Invite member to trip |
+| `GET` | `/api/destinations` | Browse destinations |
+| `GET` | `/api/notifications` | Get user notifications |
+
+---
+
+<a id="developer"></a>
 
 ## 👨‍💻 Developer
 
 **V S S S Manikanta**
-- GitHub: [@vadagammanikanta](https://github.com/vadagammanikanta)
-- Project: [TripNest on GitHub](https://github.com/vadagammanikanta/TripNest)
-- Live App: [trip-nest-sand.vercel.app](https://trip-nest-sand.vercel.app)
+
+[![GitHub](https://img.shields.io/badge/GitHub-vadagammanikanta-181717?style=flat&logo=github)](https://github.com/vadagammanikanta)
+
+- 🔗 **GitHub:** [github.com/vadagammanikanta](https://github.com/vadagammanikanta)
+- 🚀 **Live App:** [trip-nest-sand.vercel.app](https://trip-nest-sand.vercel.app)
+- 📦 **Repo:** [github.com/vadagammanikanta/TripNest](https://github.com/vadagammanikanta/TripNest)
 
 ---
 
 <div align="center">
-  <strong>Built with ❤️ for the Springboard Mentorship Program</strong><br/><br/>
+  <strong>Built with ❤️ by V S S S Manikanta</strong><br/><br/>
   <a href="https://trip-nest-sand.vercel.app">🚀 Try TripNest Live →</a>
 </div>
