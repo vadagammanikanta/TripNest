@@ -37,13 +37,13 @@ const Login = () => {
     <div className="auth-wrapper">
       <div className="auth-card">
         <div className="auth-logo">
-          <span className="logo-icon">🧳</span>
           <span className="logo-text">TripNest</span>
         </div>
         <h2 className="auth-title">Sign In</h2>
 
         <form onSubmit={handleSubmit} id="login-form">
           <div className="form-group">
+            <label htmlFor="login-username">Username</label>
             <input
               id="login-username"
               type="text"
@@ -57,6 +57,7 @@ const Login = () => {
           </div>
 
           <div className="form-group">
+            <label htmlFor="login-password">Password</label>
             <input
               id="login-password"
               type="password"
@@ -77,14 +78,10 @@ const Login = () => {
           <button
             id="login-submit-btn"
             type="submit"
-            className="btn btn-primary btn-full"
+            className="btn btn-primary"
             disabled={loading}
           >
-            {loading ? (
-              <span className="spinner">Signing in...</span>
-            ) : (
-              'Sign In'
-            )}
+            {loading ? <span className="spinner"></span> : 'Sign In'}
           </button>
         </form>
 

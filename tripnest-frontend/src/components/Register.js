@@ -61,7 +61,6 @@ const Register = () => {
     <div className="auth-wrapper">
       <div className="auth-card auth-card-wide">
         <div className="auth-logo">
-          <span className="logo-icon">🧳</span>
           <span className="logo-text">TripNest</span>
         </div>
         <h2 className="auth-title">Create Account</h2>
@@ -69,6 +68,7 @@ const Register = () => {
         <form onSubmit={handleSubmit} id="register-form">
           <div className="form-row">
             <div className="form-group">
+              <label htmlFor="reg-firstname">First Name</label>
               <input
                 id="reg-firstname"
                 name="firstName"
@@ -80,6 +80,7 @@ const Register = () => {
               />
             </div>
             <div className="form-group">
+              <label htmlFor="reg-lastname">Last Name</label>
               <input
                 id="reg-lastname"
                 name="lastName"
@@ -93,6 +94,7 @@ const Register = () => {
           </div>
 
           <div className="form-group">
+            <label htmlFor="reg-username">Username</label>
             <input
               id="reg-username"
               name="username"
@@ -108,6 +110,7 @@ const Register = () => {
           </div>
 
           <div className="form-group">
+            <label htmlFor="reg-email">Email Address</label>
             <input
               id="reg-email"
               name="email"
@@ -120,20 +123,40 @@ const Register = () => {
             />
           </div>
 
-          <div className="form-group">
-            <input
-              id="reg-phone"
-              name="phone"
-              type="tel"
-              className="form-input"
-              placeholder="Phone Number"
-              value={formData.phone}
-              onChange={handleChange}
-              maxLength={15}
-            />
+          <div className="form-row">
+            <div className="form-group">
+              <label htmlFor="reg-phone">Phone Number</label>
+              <input
+                id="reg-phone"
+                name="phone"
+                type="tel"
+                className="form-input"
+                placeholder="Phone Number"
+                value={formData.phone}
+                onChange={handleChange}
+                maxLength={15}
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="reg-role">Role</label>
+              <select
+                id="reg-role"
+                name="role"
+                className="form-input form-select"
+                value={formData.role}
+                onChange={handleChange}
+              >
+                <option value="">Select Role (default: Traveler)</option>
+                <option value="traveler">Traveler</option>
+                <option value="agent">Travel Agent</option>
+                <option value="admin">Admin</option>
+              </select>
+            </div>
           </div>
 
           <div className="form-group">
+            <label htmlFor="reg-password">Password</label>
             <input
               id="reg-password"
               name="password"
@@ -147,21 +170,6 @@ const Register = () => {
             />
           </div>
 
-          <div className="form-group">
-            <select
-              id="reg-role"
-              name="role"
-              className="form-input form-select"
-              value={formData.role}
-              onChange={handleChange}
-            >
-              <option value="">Select Role (default: Traveler)</option>
-              <option value="traveler">Traveler</option>
-              <option value="agent">Travel Agent</option>
-              <option value="admin">Admin</option>
-            </select>
-          </div>
-
           {message && (
             <div className={`alert ${success ? 'alert-success' : 'alert-error'}`} role="alert">
               {message}
@@ -171,7 +179,7 @@ const Register = () => {
           <button
             id="register-submit-btn"
             type="submit"
-            className="btn btn-primary btn-full"
+            className="btn btn-primary"
             disabled={loading}
           >
             {loading ? 'Creating Account...' : 'Create Account'}
