@@ -4,6 +4,10 @@ import { AuthProvider, useAuth } from './context/AuthContext';
 import Login from './components/Login';
 import Register from './components/Register';
 import Dashboard from './components/Dashboard';
+import TripList from './components/TripList';
+import TripForm from './components/TripForm';
+import TripDetail from './components/TripDetail';
+import Destinations from './components/Destinations';
 import './App.css';
 
 /**
@@ -57,6 +61,50 @@ function App() {
             element={
               <PrivateRoute>
                 <Dashboard />
+              </PrivateRoute>
+            }
+          />
+
+          {/* Trip routes */}
+          <Route
+            path="/trips"
+            element={
+              <PrivateRoute>
+                <TripList />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/trips/new"
+            element={
+              <PrivateRoute>
+                <TripForm />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/trips/:id"
+            element={
+              <PrivateRoute>
+                <TripDetail />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/trips/:id/edit"
+            element={
+              <PrivateRoute>
+                <TripForm />
+              </PrivateRoute>
+            }
+          />
+
+          {/* Destinations */}
+          <Route
+            path="/destinations"
+            element={
+              <PrivateRoute>
+                <Destinations />
               </PrivateRoute>
             }
           />

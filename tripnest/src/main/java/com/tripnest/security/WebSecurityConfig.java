@@ -95,11 +95,15 @@ public class WebSecurityConfig {
                     // Public endpoints
                     .requestMatchers("/api/auth/**").permitAll()
                     .requestMatchers("/api/test/all").permitAll()
+                    .requestMatchers("/api/destinations/**").permitAll()
                     .requestMatchers("/error").permitAll()
                     // Role-protected endpoints
                     .requestMatchers("/api/test/admin/**").hasRole("ADMIN")
                     .requestMatchers("/api/test/agent/**").hasRole("AGENT")
                     .requestMatchers("/api/test/traveler/**").hasRole("TRAVELER")
+                    // Trip, itinerary, activity management — requires authentication
+                    .requestMatchers("/api/trips/**").authenticated()
+                    .requestMatchers("/api/itineraries/**").authenticated()
                     // Everything else requires authentication
                     .anyRequest().authenticated());
 

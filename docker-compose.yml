@@ -1,0 +1,52 @@
+services:
+  # 1. MySQL Database Service
+  db:
+    image: mysql:8
+    container_name: tripnest-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: VSSSM@2006
+      MYSQL_DATABASE: tripnest_db
+    ports:
+      - "3307:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-pVSSSM@2006"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  # 2. Spring Boot Backend Service
+  backend:
+    build:
+      context: ./tripnest
+      dockerfile: Dockerfile
+    container_name: tripnest-backend
+    restart: always
+    ports:
+      - "8082:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/tripnest_db?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: VSSSM@2006
+      # Auto-run table creation if needed (matches application.properties default)
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+    depends_on:
+      db:
+        condition: service_healthy
+
+  # 3. React Frontend Service (served via Nginx)
+  frontend:
+    build:
+      context: ./tripnest-frontend
+      dockerfile: Dockerfile
+    container_name: tripnest-frontend
+    restart: always
+    ports:
+      - "8081:80"
+    depends_on:
+      - backend
+
+volumes:
+  db_data:
