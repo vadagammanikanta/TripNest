@@ -95,6 +95,7 @@ public class WebSecurityConfig {
                     // Public endpoints
                     .requestMatchers("/api/auth/**").permitAll()
                     .requestMatchers("/api/test/all").permitAll()
+                    .requestMatchers("/error").permitAll()
                     // Role-protected endpoints
                     .requestMatchers("/api/test/admin/**").hasRole("ADMIN")
                     .requestMatchers("/api/test/agent/**").hasRole("AGENT")
