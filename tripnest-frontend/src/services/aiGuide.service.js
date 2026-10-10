@@ -12,11 +12,19 @@ export async function getLiveWeatherForecast(destinationName) {
   const cleanName = destinationName.split(',')[0].trim();
   try {
     const geoRes = await axios.get(
-      `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(cleanName)}&count=1&language=en&format=json`
+      `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(cleanName)}&count=5&language=en&format=json`
     );
     if (!geoRes.data?.results || geoRes.data.results.length === 0) return null;
 
-    const { latitude, longitude, name, country } = geoRes.data.results[0];
+    const results = geoRes.data.results;
+    const searchLower = cleanName.toLowerCase();
+    // Pick best match: exact name match first, then startsWith, then first result
+    const best = results.find(r => r.name.toLowerCase() === searchLower)
+      || results.find(r => r.name.toLowerCase().startsWith(searchLower))
+      || results[0];
+
+    const { latitude, longitude, name, country } = best;
+
     const weatherRes = await axios.get(
       `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&timezone=auto`
     );

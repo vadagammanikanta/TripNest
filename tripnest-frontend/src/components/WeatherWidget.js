@@ -66,16 +66,22 @@ const WeatherWidget = ({ destinationName = 'Hyderabad' }) => {
         let timezone = 'auto';
 
         // 1. Try Open-Meteo Geocoding API to resolve ANY global city coordinates
+        // Fetch multiple results and pick best match to avoid wrong city (e.g. "Goa" → "Genoa, Italy")
         try {
           const geoRes = await axios.get(
-            `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(cleanName)}&count=1&language=en&format=json`
+            `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(cleanName)}&count=5&language=en&format=json`
           );
           if (geoRes.data?.results && geoRes.data.results.length > 0) {
-            const first = geoRes.data.results[0];
-            lat = first.latitude;
-            lon = first.longitude;
-            locName = `${first.name}${first.country ? ', ' + first.country : ''}`;
-            timezone = first.timezone || 'auto';
+            const results = geoRes.data.results;
+            const searchLower = cleanName.toLowerCase();
+            // Pick best match: exact name match first, then startsWith, then first result
+            const best = results.find(r => r.name.toLowerCase() === searchLower)
+              || results.find(r => r.name.toLowerCase().startsWith(searchLower))
+              || results[0];
+            lat = best.latitude;
+            lon = best.longitude;
+            locName = `${best.name}${best.country ? ', ' + best.country : ''}`;
+            timezone = best.timezone || 'auto';
           }
         } catch (geoErr) {
           console.warn('Geocoding error, falling back to local database:', geoErr);
